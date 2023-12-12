@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "luhn"
+version = "0.1.0"
+authors = [
+    { name = "Valentin NOEL", email = "valentin.noel@luminvent.com" },
+]
+description = "Python exercice: Luhn algorithm"
+readme = "README.md"
+requires-python = ">=3.7"
+keywords = ["luhn", "exerice"]
+license = { text = "Proprietary" }
+
+dependencies = [
+]
+
+[project.optional-dependencies]
+test = [
+    "pylint ~=3.0.0"
+]
+
+[tool.pylint.format]
+max-line-length = 120
