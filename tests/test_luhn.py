@@ -35,7 +35,7 @@ class TestLuhn(unittest.TestCase):
         credit_card_number = "9273 1355 2234 016"
 
 
-        #test si le message d'erreur fonction
+        #test si le message d'erreur fonctionne
         with self.assertRaises(Exception) as context:
             is_valid(credit_card_number)
 
@@ -44,7 +44,7 @@ class TestLuhn(unittest.TestCase):
     def test_luhn_non_digit_input(self):
         credit_card_number = "Here is my credit card number!"
 
-        #test si le message d'erreur fonction
+        #test si le message d'erreur fonctionne
         with self.assertRaises(Exception) as context:
             is_valid(credit_card_number)
 
