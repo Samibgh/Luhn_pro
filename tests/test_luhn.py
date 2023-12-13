@@ -34,13 +34,21 @@ class TestLuhn(unittest.TestCase):
     def test_luhn_malformed_credit_card_number(self):
         credit_card_number = "9273 1355 2234 016"
 
-        self.assertRaises(Exception, is_valid(credit_card_number))  # TODO: check the error type
+
+        #test si le message d'erreur fonction
+        with self.assertRaises(Exception) as context:
+            is_valid(credit_card_number)
+
+        self.assertIn("Invalid credit card length", str(context.exception))
 
     def test_luhn_non_digit_input(self):
         credit_card_number = "Here is my credit card number!"
 
-        self.assertRaises(Exception, is_valid(credit_card_number))  # TODO: check the error type
+        #test si le message d'erreur fonction
+        with self.assertRaises(Exception) as context:
+            is_valid(credit_card_number)
 
-
+        self.assertIn("Invalid characters in the credit card number", str(context.exception))
+        
 if __name__ == '__main__':
     unittest.main()
